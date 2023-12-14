@@ -6,27 +6,29 @@
   <style>
     body {
       font-family: Arial;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      position: relative;
     }
     
     .login-form {
       max-width: 300px;
-      margin: 100px auto;
+      margin: 115px auto 0;
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 10px;
       background-color: #f9f9f9;
-      text-align: center; /* Untuk memusatkan elemen dalam form */
-    }
-    
-    .login-form img {
-      display: block;
-      margin: -50px auto 20px; /* Memindahkan gambar ke atas */
-      max-width: 100px; /* Sesuaikan dengan ukuran gambar */
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
     
     .login-header {
-      color: #ff4500; /* Ubah warna teks */
-      margin-top: -5px; /* Geser ke atas */
+      color: #ff4500;
+      margin-top: -5px;
       text-align: left; 
     }
     
@@ -46,17 +48,44 @@
       color: white;
       cursor: pointer;
     }
+
+    /* Lapisan latar belakang di belakang login */
+    .upper-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 40vh;
+      background-color: #8a2be2;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Mengatur teks ke atas */
+      color: white;
+      font-size: 24px;
+      font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto */
+      padding-top: 30px; /* Jarak atas teks dari lapisan ungu */
+    }
+
+    .lower-bg {
+      height: 60vh;
+      background-color: #ffffff;
+    }
   </style>
 </head>
 <body>
-  <div class="login-form">
-    <img src="kredit.jpg" alt="Kredit Foto">
-    <div class="login-header"><h1>Login</h1></div> <!-- Perubahan pada teks Login -->
-    <form action="landing.html" method="post">
-      <input type="number" name="someid" placeholder="Nomor Handphone">
-      <input type="password" name="password" placeholder="Password">
-      <input type="submit" value="Login">
-    </form>
+  <div class="upper-bg">
+    Kredit Kilat <!-- Tambahkan teks di lapisan ungu -->
+  </div>
+  <div class="lower-bg">
+    <div class="login-form">
+      <div class="login-header"><h1>Login</h1></div>
+      <form action="landing.html" method="post">
+        <input type="number" name="someid" placeholder="Nomor Handphone">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Login">
+      </form>
+    </div>
   </div>
 </body>
 </html>
